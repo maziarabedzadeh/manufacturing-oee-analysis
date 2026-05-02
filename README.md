@@ -28,3 +28,30 @@ To run this analysis, you need Python installed on your system.
 You need to install the following dependencies:
 ```bash
 pip install pandas matplotlib numpy
+# Glioblastoma Microstructure Analysis (Ivy GAP)
+
+## Overview
+This project performs an end-to-end transcriptomic analysis of Glioblastoma (GBM) tumors using the **Ivy Glioblastoma Atlas Project (Ivy GAP)** dataset. The study maps how gene expression shifts across five distinct anatomical tumor regions, from the dense hypoxic core to the invasive leading edge.
+
+## Methodology
+The analysis pipeline involves:
+- **Quality Control (PCA):** Principal Component Analysis to verify that biological structure (not patient demographics) drives sample variability.
+- **Differential Expression (DESeq2):** Identification of "Star Genes" (e.g., *RAB3B*, *GABRA6*) that define distinct molecular signatures between tumor regions.
+- **Network Analysis (WGCNA):** Co-expression network construction to reveal functional "engines" driving tumor biology:
+    - **Blue Module (Angiogenic Engine):** Drivers of blood vessel growth (*KDR/VEGFR2*).
+    - **Turquoise Module (Infiltration Engine):** Programs for brain-mimicry and spread (*CHKA*, *SYP*).
+
+## Key Findings
+- **Molecular Heterogeneity:** Two distinct molecular profiles separate the core from the invasive edge, suggesting region-specific therapeutic targets.
+- **Tumor Mimicry:** GBM hijacks the brain's own neurotransmitter machinery (e.g., GABA/Glutamate pathways) to facilitate infiltration.
+
+## Technical Stack
+- **Languages:** R (v4.5.3+)
+- **Packages:** `DESeq2`, `WGCNA`, `biomaRt`, `ggplot2`, `dplyr`
+
+## Results
+![PCA Plot](PCA_Plot.png)
+![Volcano Plot](Volcano_Plot.png)
+
+## Acknowledgements
+Special thanks to Professor Nihal Salem for the guidance, mentorship, and scientific direction throughout this analysis.
