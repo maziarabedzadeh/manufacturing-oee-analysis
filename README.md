@@ -55,3 +55,45 @@ The analysis pipeline involves:
 
 ## Acknowledgements
 Special thanks to Professor Nihal Salem for the guidance, mentorship, and scientific direction throughout this analysis.
+# Siemens S7-1500 Conveyor Control System
+
+This project demonstrates an industrial automation control system designed for a conveyor-based production line using **Siemens S7-1500 PLC logic**. The project simulates a real-world manufacturing scenario, focusing on safety, efficiency, and fault handling.
+
+
+
+## Project Overview
+The primary objective of this project is to showcase professional-grade PLC programming techniques. Even in a simulated environment using TIA Portal/PLCSIM, the logic follows industrial standards for conveyor automation, including manual/automatic operations and fail-safe interlocks.
+
+## Key Features & Skills
+- **PLC Logic:** Implementing Motor Seal-in logic and timer-based fault detection.
+- **Safety Interlocks:** Emergency Stop (E-Stop) logic to ensure system integrity.
+- **Auto/Manual Modes:** HMI-based operational mode selection.
+- **Fault Handling:** Automated detection of "Conveyor Jam" via sensor timeouts.
+- **KPI Tracking:** Production counting and alarm management.
+
+## Sequence of Operation
+1. **Mode Selection:** Operator selects Auto/Manual mode via HMI.
+2. **Safety Check:** System confirms Emergency Stop is inactive.
+3. **Start Sequence:** Start command energizes the Conveyor Motor.
+4. **Processing:** Sensors detect products, incrementing the Production Counter.
+5. **Fault Monitoring:** If Sensor 2 does not detect product movement within 5 seconds, a "Jam Alarm" is triggered, stopping the motor.
+
+## I/O Mapping
+| Address | Tag Name | Description |
+|---|---|---|
+| I0.0 | Start_PB | System Start Push Button |
+| I0.1 | Stop_PB | System Stop Push Button |
+| I0.2 | E_Stop | Emergency Stop |
+| I0.3 | Sensor_Infeed | Product Detection Sensor |
+| I0.4 | Sensor_Outfeed | Product Exit Sensor |
+| Q0.0 | Conveyor_Motor | Conveyor Motor Output |
+| Q0.1 | Alarm_Light | Fault Alarm Indicator |
+
+## Technical Implementation
+- **Hardware Simulation:** Siemens S7-1500 (via PLCSIM)
+- **Software:** Siemens TIA Portal
+- **Programming Language:** Ladder Logic (LAD)
+
+## Contact
+**Maziar Abedzadeh**
+*Analytical Chemist & Aspiring Automation Engineer*
